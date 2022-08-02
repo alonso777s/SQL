@@ -1,0 +1,21 @@
+CREATE TABLE Metal_CD_Store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, release_year INTEGER);
+
+INSERT INTO Metal_CD_Store VALUES (1, "Iron_Maiden", 10, 5000, 1990);
+INSERT INTO Metal_CD_Store VALUES (2, "Metallica", 15, 5500, 2000);
+INSERT INTO Metal_CD_Store VALUES (3, "Megadeth", 17, 7000, 1980);
+INSERT INTO Metal_CD_Store VALUES (4, "Slayer", 11, 10000, 1995);
+INSERT INTO Metal_CD_Store VALUES (5, "Hammerfall", 19, 5200, 1980);
+INSERT INTO Metal_CD_Store VALUES (6, "Sepultura", 15, 5250, 1993);
+INSERT INTO Metal_CD_Store VALUES (7, "NightWish", 12, 6000, 2005);
+INSERT INTO Metal_CD_Store VALUES (8, "FAUN", 10, 8000, 2010);
+INSERT INTO Metal_CD_Store VALUES (9, "OMNIA", 10, 7000, 2015);
+INSERT INTO Metal_CD_Store VALUES (10, "Helloween", 15, 5000, 1975);
+INSERT INTO Metal_CD_Store VALUES (11, "Amaranthe", 12, 10000, 2017);
+INSERT INTO Metal_CD_Store VALUES (12, "Disturbed", 12, 15000, 2001);
+INSERT INTO Metal_CD_Store VALUES (13, "BEAST_IN_BLACK", 13, 4500, 2002);
+INSERT INTO Metal_CD_Store VALUES (14, "Arch_Enemy", 17, 5000, 2016);
+INSERT INTO Metal_CD_Store VALUES (15, "EPICA", 16, 10000, 2003);
+
+SELECT name, price, quantity FROM Metal_CD_Store WHERE price >= 10000 ORDER BY price desc;
+
+SELECT SUM (quantity) FROM Metal_CD_Store WHERE price >= 10000 ORDER BY price desc;
