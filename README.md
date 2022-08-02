@@ -1,7 +1,6 @@
-# SQL
-## SQL Portfolio
+# SQL Portfolio
 
-### **Welcome to my SQL portfolio!** 
+## **Welcome to my SQL portfolio!** 
 
 This code repository contains **_examples_** of SQL I've written. 
 
