@@ -18,4 +18,4 @@ INSERT INTO Metal_CD_Store VALUES (15, "EPICA", 16, 10000, 2003);
 
 SELECT name, price, quantity FROM Metal_CD_Store WHERE price >= 10000 ORDER BY price desc;
 
-SELECT SUM (quantity) FROM Metal_CD_Store WHERE price >= 10000 ORDER BY price desc;
+SELECT SUM (quantity) FROM Metal_CD_Store WHERE price >= 10000;
