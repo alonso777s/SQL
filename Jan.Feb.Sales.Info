@@ -39,3 +39,10 @@ SELECT COUNT(cx.acctnum), AVG(Quantity*price) FROM BIT_DB.FebSales fs
 LEFT JOIN BIT_DB.customers cx
 ON fs.orderid=cx.order_id
 WHERE fs.Quantity>2;
+
+**List all the products sold in Los Angeles in February, and include how many of each were sold
+
+SELECT distinct Product, COUNT(Quantity)
+FROM BIT_DB.FebSales 
+WHERE location like '%Los Angeles%'
+GROUP BY Product;
