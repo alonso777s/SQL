@@ -1,0 +1,113 @@
+# For this project, I downloaded Spotify data from Kaggle.
+# Then I created a table to insert Spotify data into.
+# Finally, I performed analytics on the data using SQL. 
+
+#Creating the table: 
+
+CREATE TABLE BIT_DB.Spotifydata (
+id integer PRIMARY KEY,
+artist_name varchar NOT NULL,
+track_name varchar NOT NULL,
+track_id varchar NOT NULL,
+popularity integer NOT NULL,
+danceability decimal(4,3) NOT NULL,
+energy decimal(4,3) NOT NULL,
+key integer NOT NULL,
+loudness decimal(5,3) NOT NULL,
+mode integer NOT NULL,
+speechiness decimal(5,4) NOT NULL,
+acousticness decimal(6,5) NOT NULL,
+instrumentalness text NOT NULL,
+liveness decimal(5,4) NOT NULL,
+valence decimal(4,3) NOT NULL,
+tempo decimal(6,3) NOT NULL,
+duration_ms integer NOT NULL,
+time_signature integer NOT NULL);
+
+#Then I inserted the Spotify Data .csv into the table.
+
+#Next, I explored the data using the following SQL. 
+
+/*1*/ I determined the top 10 MAX popularity, danceability, and energy by artist and track ordered by popularity.
+
+SELECT artist_name, track_name, MAX(popularity), MAX(danceability), MAX(energy) FROM BIT_DB.SpotifyData
+GROUP BY artist_name, track_name
+ORDER BY Max(popularity) DESC
+LIMIT 10;
+
+/*2* I determined the top 10 MAX popularity, danceability, and energy by artist and track ordered by danceability.
+
+SELECT artist_name, track_name, MAX(popularity), MAX(danceability), MAX(energy) FROM BIT_DB.SpotifyData
+GROUP BY artist_name, track_name
+ORDER BY Max(danceability) DESC
+LIMIT 10;
+
+/*3* I determined the top 10 MAX popularity, danceability, and energy by artist and track ordered by energy.
+
+SELECT artist_name, track_name, MAX(popularity), MAX(danceability), MAX(energy) FROM BIT_DB.SpotifyData
+GROUP BY artist_name, track_name
+ORDER BY Max(energy) DESC
+LIMIT 10;
+
+/*4* I determined the top 10 AVG popularity, danceability, and energy by artist and track ordered by popularity.
+
+SELECT artist_name, track_name, AVG(popularity), AVG(danceability), AVG(energy) FROM BIT_DB.SpotifyData
+GROUP BY artist_name, track_name
+ORDER BY AVG(popularity) DESC
+LIMIT 10;
+
+/*5* I determined the top 10 AVG popularity, danceability, and energy by artist and track ordered by danceability.
+
+SELECT artist_name, track_name, AVG(popularity), AVG(danceability), AVG(energy) FROM BIT_DB.SpotifyData
+GROUP BY artist_name, track_name
+ORDER BY AVG(danceability) DESC
+LIMIT 10;
+
+/*6* I determined the top 10 AVG popularity, danceability, and energy by artist and track ordered by energy.
+
+SELECT artist_name, track_name, AVG(popularity), AVG(danceability), AVG(energy) FROM BIT_DB.SpotifyData
+GROUP BY artist_name, track_name
+ORDER BY AVG(energy) DESC
+LIMIT 10;
+
+/*7* I determined the bottom 10 MIN popularity, danceability, and energy by artist and track ordered by popularity.
+
+SELECT artist_name, track_name, MIN(popularity), MIN(danceability), MIN(energy) FROM BIT_DB.SpotifyData
+GROUP BY artist_name, track_name
+ORDER BY MIN(popularity) ASC
+LIMIT 10;
+
+/*8* I determined the bottom 10 MIN popularity, danceability, and energy by artist and track ordered by danceability.
+
+SELECT artist_name, track_name, MIN(popularity), MIN(danceability), MIN(energy) FROM BIT_DB.SpotifyData
+GROUP BY artist_name, track_name
+ORDER BY MIN(danceability) ASC
+LIMIT 10;
+
+/*9* I determined the bottom 10 MIN popularity, danceability, and energy by artist and track ordered by energy.
+
+SELECT artist_name, track_name, MIN(popularity), MIN(danceability), MIN(energy) FROM BIT_DB.SpotifyData
+GROUP BY artist_name, track_name
+ORDER BY MIN(energy) ASC
+LIMIT 10;
+
+
+/*10*/ I determined the top 10 MAX duration_ms, liveness, valence and tempo by artist and track ordered by duration_ms.
+
+SELECT artist_name, track_name, MAX(duration_ms), MAX(liveness), MAX(valence), MAX(tempo) FROM BIT_DB.SpotifyData
+GROUP BY artist_name, track_name
+ORDER BY MAX(duration_ms) DESC
+LIMIT 10;
+
+/*11*/ I determined the top 10 MAX loudness, speechiness, acousticness and instrumentalness by artist and track ordered by loudness.
+
+SELECT artist_name, track_name, MAX(loudness), MAX(speechiness), MAX(acousticness), MAX(instrumentalness) FROM BIT_DB.SpotifyData
+GROUP BY artist_name, track_name
+ORDER BY MAX(loudness) DESC
+LIMIT 10;
+
+/*12*/ I determined the tracks with popularity above 90 that have energy above 0.5 and loudness below -0.5 ordered by energy.
+
+SELECT artist_name, track_name, popularity, energy, loudness FROM BIT_DB.SpotifyData
+WHERE popularity >=90 AND energy>0.5 AND loudness< -0.5 
+ORDER BY popularity DESC;
