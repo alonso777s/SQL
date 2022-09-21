@@ -106,8 +106,8 @@ GROUP BY artist_name, track_name
 ORDER BY MAX(loudness) DESC
 LIMIT 10;
 
-/*12*/ I determined the tracks with popularity above 90 that have energy above 0.5 and loudness below -0.5 ordered by energy.
+/*12*/ I determined the tracks with popularity above 90 that have energy above 0.5 and loudness below 5 ordered by energy.
 
 SELECT artist_name, track_name, popularity, energy, loudness FROM BIT_DB.SpotifyData
-WHERE popularity >=90 AND energy>0.5 AND loudness< -0.5 
+WHERE popularity >=90 AND energy>0.5 AND loudness<5 
 ORDER BY popularity DESC;
