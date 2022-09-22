@@ -113,7 +113,7 @@ WHERE popularity >=90 AND energy>0.5 AND loudness<5
 ORDER BY popularity DESC;
 
 /*13*/ First I determined the average of popularity (86).
-Then classify all the tracks and listed those above 87 as Above Average, those between 86 and 87 as Average and those below 86 as Below Average
+Then classify all the tracks and listed those above 87 as Above Average, those between 86 and 87 as Average and those below 86 as Below Average and ordered them DESC.
 
 SELECT artist_name, track_name, AVG(popularity) FROM BIT_DB.SpotifyData;
 
@@ -124,4 +124,4 @@ SELECT artist_name, track_name, popularity,
         WHEN popularity<86 THEN "Below Average"
     END AS Rating
  FROM BIT_DB.SpotifyData
- ORDER BY popularity DESC
+ ORDER BY popularity DESC;
