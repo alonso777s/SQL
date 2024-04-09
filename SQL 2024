@@ -1,0 +1,36 @@
+#1 
+First SQL project! My own SQL code to query a Superstore Database. 
+
+SQL query that uses a SELECT statement to order the items by price
+
+SELECT price, item_name
+FROM superstore
+ORDER BY price ASC
+;
+
+SQL query that will show a statistic about the item prices
+
+SELECT MIN(price), MAX(price), AVG(price)
+FROM superstore
+;
+
+SQL query that will show a statistic about the price for items in the category of "Electronics".
+
+SELECT MIN(price), MAX(price), AVG(price), "Electronics"
+FROM superstore
+WHERE category="Electronics"
+;
+
+SQL query that will show a statistic about the price for items in the category of "Kitchen Supplies".
+
+SELECT "Kitchen Supplies", MIN(price), MAX(price), AVG(price)
+FROM superstore
+WHERE category="Kitchen Supplies"
+;
+
+SQL query that will show a statistic about the price and stock for items in the category of "Kitchen Supplies".
+
+SELECT "Kitchen Supplies", MIN(price), MAX(price), AVG(price), COUNT(stock_quantity)
+FROM superstore
+WHERE category="Kitchen Supplies"
+;
